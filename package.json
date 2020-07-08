@@ -1,0 +1,28 @@
+{
+  "name": "tribute-page",
+  "version": "1.0.0",
+  "description": "Project intended to make the portfolio item from freecodecamp curriculum better",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irensaywhen/tribute-page.git"
+  },
+  "author": "Irina Gataullina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irensaywhen/tribute-page/issues"
+  },
+  "homepage": "https://github.com/irensaywhen/tribute-page#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "eslint": "^7.4.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^4.1.0",
+    "imagemin-pngquant": "^9.0.0",
+    "webpack": "^4.43.0"
+  }
+}
