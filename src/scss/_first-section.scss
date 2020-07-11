@@ -1,0 +1,18 @@
+/*--- First section ---*/
+.first-section {
+  background: $primary-color;
+  color: $secondary-color;
+  text-align: center;
+  padding-top: 35vh;
+  width: 100vw;
+  height: 100vh;
+
+  .title {
+    @include fluid-type($min_width, $max_width, 35px, 56px);
+  }
+
+  .description {
+    @include fluid-type($min_width, $max_width, 16px, 22px);
+    padding-top: 10px;
+  }
+}
