@@ -1,5 +1,5 @@
-import anime from "animejs/lib/anime.es.js";
-import loaderTimeline from "./loader.js";
+//import anime from "animejs/lib/anime.es.js";
+//import loaderTimeline from "./loader.js";
 
 //window.addEventListener("load", () => {
 //  let loader = document.getElementById("loader");
@@ -17,22 +17,22 @@ import loaderTimeline from "./loader.js";
 //  window["loaderTimeline"] = null;
 //});
 
-let loader = document.getElementById("loader");
-let firstSectionTimeline = anime.timeline({
-  targets: loader,
-  opacity: [1, 0],
-  duration: 4000,
-  delay: 2000,
-  easing: "easeInQuad",
-  complete: function () {
-    loaderTimeline.pause();
-  },
-});
-
-firstSectionTimeline.add({
-  targets: "#first-section",
-  opacity: [0, 1],
-  duration: 4000,
-});
+//let loader = document.getElementById("loader");
+//let firstSectionTimeline = anime.timeline({
+//  targets: loader,
+//  opacity: [1, 0],
+//  duration: 4000,
+//  delay: 2000,
+//  easing: "easeInQuad",
+//  complete: function () {
+//    loaderTimeline.pause();
+//  },
+//});
+//
+//firstSectionTimeline.add({
+//  targets: "#first-section",
+//  opacity: [0, 1],
+//  duration: 4000,
+//});
 //
 //window["loaderTimeline"].pause();
