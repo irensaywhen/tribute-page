@@ -9,10 +9,25 @@
 
   .title {
     @include fluid-type($min_width, $max_width, 35px, 56px);
+
+    @for $i from 1 through 3 {
+      .word-#{$i} {
+        opacity: 0;
+      }
+    }
   }
 
   .description {
     @include fluid-type($min_width, $max_width, 16px, 22px);
     padding-top: 10px;
+    opacity: 0;
+  }
+
+  .hero-image {
+    opacity: 0;
+  }
+
+  .image-caption {
+    opacity: 0;
   }
 }

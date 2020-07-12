@@ -1,14 +1,5 @@
 import anime from "animejs/lib/anime.es.js";
 
-anime({
-  targets: ".loader .circle",
-  scale: [0, 1],
-  delay: anime.stagger(200),
-  duration: 800,
-  loop: true,
-  easing: "linear",
-});
-
 let loaderTimeline = anime.timeline({
   easing: "linear",
   duration: 800,
@@ -74,5 +65,3 @@ loaderTimeline
     },
     1000
   );
-
-export default loaderTimeline;
