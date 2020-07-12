@@ -1,78 +1,72 @@
 import anime from "animejs/lib/anime.es.js";
 
-window.addEventListener("load", () => {
-  anime({
-    targets: "#loader",
-    opacity: [1, 0],
-    duration: 1000,
-    easing: "linear",
-    complete: function () {
-      anime({
-        targets: "#first-section .word-1",
-        opacity: [0, 1],
-        delay: 2000,
-        duration: 1500,
-        easing: "linear",
-        complete: function () {
-          anime({
-            targets: "#first-section .word-2",
-            opacity: [0, 1],
-            duration: 1500,
-            easing: "linear",
-            complete: function () {
-              anime({
-                targets: "#first-section .word-3",
-                opacity: [0, 1],
-                duration: 1500,
-                easing: "linear",
-                complete: function () {},
-              });
-            },
-          });
-        },
-      });
-    },
+document.addEventListener("DOMContentLoaded", () => {
+  // Wrap every letter in a span
+  let textWrappers = Array.from(document.querySelectorAll(".text-wrapper"));
+
+  console.log(textWrappers);
+
+  textWrappers.forEach((textWrapper) => {
+    textWrapper.innerHTML = textWrapper.textContent.replace(
+      /\S/g,
+      "<span class='letter'>$&</span>"
+    );
   });
 });
 
-//let loader = document.getElementById("loader");
-//
-//anime({
-//    targets:
-//})
-
-//window.addEventListener("load", () => {
-//  let loader = document.getElementById("loader");
-//
-//  anime({
-//    targets: loader,
-//    opacity: [1, 0],
-//    duration: 1000,
-//  });
-//  // Hide loader
-//  //loader.style.display = "none";
-//
-//  // Stop animation
-//  window["loaderTimeline"].pause();
-//  window["loaderTimeline"] = null;
-//});
-
-//let loader = document.getElementById("loader");
-//let firstSectionTimeline = anime.timeline({
-//  targets: loader,
-//  opacity: [1, 0],
-//  duration: 4000,
-//  delay: 2000,
-//  easing: "easeInQuad",
-//  complete: function () {
-//    loaderTimeline.pause();
-//  },
-//});
-//
-//firstSectionTimeline.add({
-//  targets: "#first-section",
-//  opacity: [0, 1],
-//  duration: 4000,
-//});
-//
-//window["loaderTimeline"].pause();
+window.addEventListener("load", () => {
+  anime
+    .timeline({
+      easing: "linear",
+    })
+    .add({
+      targets: "#loader",
+      opacity: [1, 0],
+      duration: 1000,
+    })
+    .add(
+      {
+        targets: "#first-section .word-1",
+        opacity: [0, 1],
+        duration: 1500,
+      },
+      "+=1000"
+    )
+    .add({
+      targets: "#first-section .word-2",
+      opacity: [0, 1],
+      duration: 1500,
+    })
+    .add({
+      targets: "#first-section .word-3",
+      opacity: [0, 1],
+      duration: 1500,
+    })
+    .add({
+      targets: ".description .letter",
+      opacity: [0, 1],
+      easing: "easeInOutQuad",
+      duration: 100,
+      delay: (el, i) => 80 * (i + 1),
+    })
+    .add({
+      targets: "#first-section",
+      paddingTop: ["35vh", "10vh"],
+      duration: 1000,
+    })
+    .add(
+      {
+        targets: "#first-section .hero-image",
+        opacity: [0, 1],
+        duration: 1500,
+      },
+      "-=500"
+    )
+    .add({
+      targets: ".image-caption .letter",
+      opacity: [0, 1],
+      easing: "easeInOutQuad",
+      duration: 100,
+      delay: (el, i) => 80 * (i + 1),
+    });
+});

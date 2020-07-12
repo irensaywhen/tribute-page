@@ -1,7 +1,5 @@
 /*--- First section ---*/
 .first-section {
-  background: $primary-color;
-  color: $secondary-color;
   text-align: center;
   padding-top: 35vh;
   width: 100vw;
@@ -20,14 +18,17 @@
   .description {
     @include fluid-type($min_width, $max_width, 16px, 22px);
     padding-top: 10px;
-    opacity: 0;
   }
 
   .hero-image {
+    max-width: 100%;
+    height: auto;
+    padding-top: 15px;
     opacity: 0;
   }
 
   .image-caption {
-    opacity: 0;
+    /*opacity: 0;*/
+    padding-top: 10px;
   }
 }
