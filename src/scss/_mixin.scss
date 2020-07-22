@@ -26,3 +26,11 @@ $max_width: 1200px;
     }
   }
 }
+
+@mixin circle($diameter) {
+  width: $diameter;
+  height: $diameter;
+  border-radius: 50%;
+  background-color: $primary-color;
+  border: 2px solid lighten($secondary-color, 10);
+}

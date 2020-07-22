@@ -1,0 +1,66 @@
+.timeline-section {
+  .navigation {
+    width: 100%;
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 40px 15px;
+    overflow: hidden;
+    position: relative;
+
+    .arrow {
+      @include circle(30px);
+      position: absolute;
+      top: calc(50% - 13px);
+      z-index: 1000;
+
+      &.backward {
+        left: 0;
+      }
+
+      &.forward {
+        right: 0;
+      }
+    }
+
+    .line {
+      position: absolute;
+      width: 2500px;
+      height: 6px;
+      margin: 0 auto;
+      background: lighten($secondary-color, 50);
+      border: 2px solid lighten($secondary-color, 50);
+      left: 0;
+      top: 50%;
+
+      .dates {
+        position: absolute;
+        top: -9px;
+        list-style: none;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        li {
+          position: relative;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: $primary-color;
+          border: 2px solid lighten($secondary-color, 10);
+          box-shadow: 5px 0 15px 10px $primary-color,
+            -5px 0 15px 10px $primary-color;
+
+          .date {
+            position: absolute;
+            top: -25px;
+            left: -50%;
+            color: lighten($secondary-color, 10);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
