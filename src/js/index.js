@@ -18,14 +18,19 @@ window.addEventListener("load", () => {
   const timeline = new Timeline();
   console.log(timeline);
 
+  const loader = document.getElementById("loader");
+
   anime
     .timeline({
       easing: "linear",
     })
     .add({
-      targets: "#loader",
+      targets: loader,
       opacity: [1, 0],
       duration: 1000,
+      complete: function () {
+        loader.style.display = "none";
+      },
     });
   // Appearance of the first section
   //.add(
